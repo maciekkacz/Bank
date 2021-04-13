@@ -1,22 +1,27 @@
 import java.math.BigDecimal;
 
 public abstract class AbstractAccount {
-    protected String name;
+    protected String number;
     protected BigDecimal balance;
     protected AccountType accountType;
 
-    public AbstractAccount(String name, BigDecimal balance, AccountType accountType) {
-        this.name = name;
+    public AbstractAccount(String number, BigDecimal balance, AccountType accountType) {
+        this.number = number;
         this.balance = balance;
         this.accountType = accountType;
     }
 
-    public String getName() {
-        return name;
+    public AbstractAccount() {
+        this.number = "" + System.nanoTime();
+        this.balance = BigDecimal.ZERO;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public String getNumber() {
+        return number;
+    }
+
+    public void setNumber(String number) {
+        this.number = number;
     }
 
     public BigDecimal getBalance() {
